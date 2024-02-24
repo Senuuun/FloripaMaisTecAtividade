@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Compras</title>
+</head>
+<body>
+    <!-- O corpo do HTML está vazio, pois não precisamos dele para este exemplo -->
+    <script>
+        let hortifruti = 0;
+        let laticinios = 0;
+        let carnes = 0;
+        let peixes = 0;
+        let aves = 0;
+
+        while (true) {
+            let produto = prompt("Qual produto você deseja comprar? (1) Hortifruti, (2) Laticínios, (3) Carnes, (4) Peixes, (5) Aves, (6) Fechar pedido");
+
+            produto = parseInt(produto);
+
+            if (produto >= 1 && produto <= 5) {
+                let quantidade = parseInt(prompt("Quantos itens você irá comprar?"));
+
+                switch (produto) {
+                    case 1:
+                        hortifruti += quantidade;
+                        break;
+                    case 2:
+                        laticinios += quantidade;
+                        break;
+                    case 3:
+                        carnes += quantidade;
+                        break;
+                    case 4:
+                        peixes += quantidade;
+                        break;
+                    case 5:
+                        aves += quantidade;
+                        break;
+                }
+            } else if (produto === 6) {
+                break;
+            } else {
+                alert("Por favor, escolha uma opção válida.");
+            }
+        }
+
+        let maiorQuantidade = Math.max(hortifruti, laticinios, carnes, peixes, aves);
+        let produtoMaisVendido = "";
+
+        if (maiorQuantidade === hortifruti) {
+            produtoMaisVendido = "Hortifruti";
+        } else if (maiorQuantidade === laticinios) {
+            produtoMaisVendido = "Laticínios";
+        } else if (maiorQuantidade === carnes) {
+            produtoMaisVendido = "Carnes";
+        } else if (maiorQuantidade === peixes) {
+            produtoMaisVendido = "Peixes";
+        } else {
+            produtoMaisVendido = "Aves";
+        }
+
+        console.log("O produto mais vendido é: " + produtoMaisVendido);
+    </script>
+</body>
+</html>

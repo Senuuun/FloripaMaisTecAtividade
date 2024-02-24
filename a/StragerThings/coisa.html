@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+<script>
+
+let ruim = 0;
+let entrevistados = 0;
+const total = 4;
+
+
+    function convite() {
+    let nome = prompt('Digite seu nome: ')
+    let resposta = prompt('Como você avalia esta série? ("ruim", "bom" ou "excelente"): ');
+
+    if (resposta.toLowerCase() === "ruim") {
+    ruim++; }
+}
+
+for (let entrevistados = 0; entrevistados < total; entrevistados++) {
+    convite();
+}
+
+console.log(`Classificação "ruim": ${ruim}`);
+</script>
+  </body>
+</html>
